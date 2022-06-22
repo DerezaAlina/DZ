@@ -94,27 +94,44 @@ const countingOfAge = function(yearOfBirth, monthOfBirth) {
 }
 countingOfAge(2011, 9);
 
-//Task 9
-let arrOfNumbers = []
-let sumOfRepeat = 9;
+//Task 9 variant 1
 
+// let arrOfNumbers = []
+// let sumOfRepeat = 9;
+
+
+// for (let i = 1; i <= 9; i++) {
+//     arrOfNumbers.push(i);
+// }
+
+// for (i = 1, j = 1; j < 10; j++) {
+
+//     if (i === 10) break;
+
+//     if (j === 1) {
+//         console.log(`\nТаблица на ${i}\n`);
+//     }
+//     console.log(i, '*', j, '=', i * j);
+
+//     if (j === 9) {
+//         i++;
+//         j = 0;
+//     }
+
+// }
+
+//Task 9 variant 2
+let arrOfNumbers = [];
 
 for (let i = 1; i <= 9; i++) {
     arrOfNumbers.push(i);
 }
+table = '';
 
-for (i = 1, j = 1; j < 10; j++) {
-
-    if (i === 10) break;
-
-    if (j === 1) {
-        console.log(`\nТаблица на ${i}\n`);
+for (let number1 of arrOfNumbers) {
+    for (let number2 of arrOfNumbers) {
+        table = table + `${number1} * ${number2} = ${number1 * number2}\n`;  
     }
-    console.log(i, '*', j, '=', i * j);
-
-    if (j === 9) {
-        i++;
-        j = 0;
-    }
-
-}
+    table = table + `\n`;
+};
+console.log(table);
